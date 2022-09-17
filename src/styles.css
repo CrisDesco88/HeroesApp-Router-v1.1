@@ -1,0 +1,19 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(/assets/heroesbackground.jpg);
+	background-color: #434343 !important;
+	background-blend-mode: overlay;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+}
