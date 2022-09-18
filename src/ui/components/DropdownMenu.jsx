@@ -17,8 +17,6 @@ export const DropdownMenu = ({ options }) => {
 		setAnchorEl(null);
 	};
 
-	const activeClassName = "underline";
-
 	return (
 		<div>
 			<Button

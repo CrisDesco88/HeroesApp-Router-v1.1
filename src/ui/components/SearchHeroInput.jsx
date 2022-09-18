@@ -1,4 +1,4 @@
-import { Box, Button, Divider, IconButton, InputBase, Paper } from "@mui/material";
+import { Box, Divider, IconButton, InputBase, Paper } from "@mui/material";
 import React, { useContext, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import DirectionsIcon from "@mui/icons-material/Directions";

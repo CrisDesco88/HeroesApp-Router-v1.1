@@ -1,3 +1,4 @@
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Footer } from "../../ui/components/Footer";
@@ -13,17 +14,16 @@ export const HeroesRoutes = () => {
 			<HeroesProvider>
 				<Navbar />
 
-				<div className="container">
+				<Box>
 					<Routes>
-						
 						<Route path="search" element={<SearchPage />} />
 						<Route path="/:publisher" element={<HeroesByPublisherPage />} />
 						<Route path="hero/:heroId" element={<HeroPage />} />
 
 						<Route path="/*" element={<Navigate to="/marvel" />} />
 					</Routes>
-				</div>
-				<Footer/>
+				</Box>
+				<Footer />
 			</HeroesProvider>
 		</>
 	);

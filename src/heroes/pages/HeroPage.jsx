@@ -3,10 +3,10 @@ import {
 	Avatar,
 	Button,
 	Card,
-	CardActionArea,
 	CardActions,
 	CardContent,
 	CardMedia,
+	Grid,
 	IconButton,
 	List,
 	ListItem,
@@ -45,121 +45,126 @@ export const HeroPage = () => {
 	return (
 		<>
 			{!isLoading && (
-				<Card
-					sx={{
-						display: "flex",
-						maxWidth: { xs: "95%", sm: "85%", md: "75%" },
-						flexDirection: "column",
-						margin: "2em auto",
-						padding: "1em",
-					}}
-				>
-					<CardActionArea>
-						<CardMedia
-							component="img"
-							height="500"
-							image={hero.images.lg}
-							alt={hero.name}
-							sx={{ maxWidth: "400px", borderRadius: "5px" }}
-							className="col-4 animate__animated animate__fadeInLeft"
-						/>
+				<Grid height={'100vh'} display={'flex'} alignItems={'center'}>
+					<Card
+						sx={{
+							display: "flex",
+							maxWidth: { xs: "95%", sm: "85%", md: "75%" },
+							flexDirection: "column",
+							margin: "2em auto",
+							padding: "1em",
+							
+						}}
+					>
+						<CardActionArea>
+							<CardMedia
+								component="img"
+								height="500"
+								image={hero.images.lg}
+								alt={hero.name}
+								sx={{ maxWidth: "400px", borderRadius: "5px" }}
+								className="col-4 animate__animated animate__fadeInLeft"
+							/>
 
-						<CardContent sx={{ minWidth: "300px" }}>
-							<Typography variant="h3">{hero.name}</Typography>
-							<List
-								sx={{
-									width: "100%",
-									maxWidth: 360,
-									bgcolor: "background.paper",
-								}}
+							<CardContent sx={{ minWidth: "300px" }}>
+								<Typography variant="h3">{hero.name}</Typography>
+								<List
+									sx={{
+										width: "100%",
+										maxWidth: 360,
+										bgcolor: "background.paper",
+									}}
+								>
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay
+													skillValue={hero.powerstats.intelligence}
+												/>
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Intelligence" />
+									</ListItem>
+
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay skillValue={hero.powerstats.strength} />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Strength" />
+									</ListItem>
+
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay skillValue={hero.powerstats.speed} />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Speed" />
+									</ListItem>
+
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay skillValue={hero.powerstats.durability} />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Durability" />
+									</ListItem>
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay skillValue={hero.powerstats.power} />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Power" />
+									</ListItem>
+									<ListItem
+										secondaryAction={
+											<IconButton edge="end">
+												<SkillDisplay skillValue={hero.powerstats.combat} />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar></Avatar>
+										</ListItemAvatar>
+										<ListItemText primary="Combat" />
+									</ListItem>
+								</List>
+							</CardContent>
+						</CardActionArea>
+						<CardActions>
+							<Button
+								className="btn btn-outline-primary"
+								onClick={onNavigateBack}
 							>
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.intelligence} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Intelligence" />
-								</ListItem>
-
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.strength} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Strength" />
-								</ListItem>
-
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.speed} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Speed" />
-								</ListItem>
-
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.durability} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Durability" />
-								</ListItem>
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.power} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Power" />
-								</ListItem>
-								<ListItem
-									secondaryAction={
-										<IconButton edge="end">
-											<SkillDisplay skillValue={hero.powerstats.combat} />
-										</IconButton>
-									}
-								>
-									<ListItemAvatar>
-										<Avatar></Avatar>
-									</ListItemAvatar>
-									<ListItemText primary="Combat" />
-								</ListItem>
-							</List>
-						</CardContent>
-					</CardActionArea>
-					<CardActions>
-						<Button
-							className="btn btn-outline-primary"
-							onClick={onNavigateBack}
-						>
-							Back...
-						</Button>
-					</CardActions>
-				</Card>
+								Back...
+							</Button>
+						</CardActions>
+					</Card>
+				</Grid>
 			)}
 		</>
 	);
