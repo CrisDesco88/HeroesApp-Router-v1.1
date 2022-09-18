@@ -8,9 +8,8 @@ import { AuthRoutes } from "../heroes/routes/AuthRoutes";
 
 export const AppRouter = () => {
 	const { status } = useCheckAuth();
-	console.log(status);
 	if (status === "checking") return <CheckingAuth />;
-  console.log(status)
+  
 
 	return (
 		<>

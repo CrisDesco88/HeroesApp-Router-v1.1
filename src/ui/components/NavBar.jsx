@@ -9,7 +9,6 @@ import {
 	Button,
 	Tooltip,
 	MenuItem,
-	InputBase,
 	Link,
 	Toolbar,
 } from "@mui/material";
@@ -22,7 +21,7 @@ import { startLogout } from "../../store/auth/thunks";
 import { DropdownMenu } from "./DropdownMenu";
 import { HeroesContext } from "../../heroes/context/HeroesContext";
 import { useNavigate } from "react-router-dom";
-import { useCheckAuth } from "../../hooks/useCheckAuth";
+
 
 export const Navbar = () => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
@@ -31,7 +30,7 @@ export const Navbar = () => {
 	const { getPublishers } = useContext(HeroesContext);
 	const publishers = getPublishers();
 	const navigate = useNavigate();
-	// const { photoURL } = useSelector((state) => state.user);
+	
 	const { displayName, photoURL } = useSelector((state) => state.auth);
 
 	const handleOpenNavMenu = (event) => {
