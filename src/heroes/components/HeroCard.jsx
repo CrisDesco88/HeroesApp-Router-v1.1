@@ -1,11 +1,9 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const HeroCard = ({ id, name, biography, images }) => {
 	return (
@@ -16,9 +14,8 @@ export const HeroCard = ({ id, name, biography, images }) => {
 					{name}
 				</Typography>
 				<Typography variant="body1">{biography.firstAppearance}</Typography>
-				<Link href={`/hero/${id}`} underline="none">
-					More info...
-				</Link>
+
+				<Link to={`/hero/${id}`}>More info...</Link>
 			</CardContent>
 		</Card>
 	);
