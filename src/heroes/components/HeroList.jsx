@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { HeroPagination } from "../../ui/components/HeroPagination";
 import { HeroesContext } from "../context/HeroesContext";
 import { HeroCard } from "./HeroCard";

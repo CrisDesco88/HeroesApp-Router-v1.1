@@ -4,7 +4,6 @@ import { AuthLayout } from "../layout/AuthLayout";
 
 import { Button, Grid, Link, TextField, Typography } from "@mui/material";
 
-import { Google } from "@mui/icons-material";
 import { useForm } from "../../hooks";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -18,7 +17,6 @@ const formData = {
 
 const formValidations = {
 	email: [
-		[(value) => value.includes("@"), "El correo debe tener un @"],
 		[(value) => value.includes("@"), "El correo debe tener un @"],
 	],
 	password: [

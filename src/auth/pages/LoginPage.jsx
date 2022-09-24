@@ -8,7 +8,6 @@ import { Google } from "@mui/icons-material";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
-	checkingAuthentication,
 	startGoogleSignIn,
 	startLoginWithEmailPassword,
 } from "../../store/auth/thunks";
